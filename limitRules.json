@@ -210,7 +210,7 @@
       "hourly": -1,
       "daily": -1,
       "weekly": -1,
-      "monthly": 3600
+      "monthly": 5000
     }
   }
 }
