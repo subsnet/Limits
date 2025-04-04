@@ -28,7 +28,7 @@
     },
     "limits": {
       "hourly": -1,
-      "daily": 20,
+      "daily": 2,
       "weekly": -1,
       "monthly": -1
     }
