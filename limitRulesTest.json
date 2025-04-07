@@ -28,7 +28,7 @@
     },
     "limits": {
       "hourly": -1,
-      "daily": 2,
+      "daily": 1,
       "weekly": -1,
       "monthly": -1
     }
@@ -198,7 +198,9 @@
       "requests": [
         "/pikaso/api/",
         "/pikaso/api/(?!limits).*",
-        "^/api\\/(?:[^/]+\\/)*download(?:\\?.*)?$"
+        "/pikaso/api/video/",
+        "^/api\\/(?:[^/]+\\/)*download(?:\\?.*)?$",
+        "/tunes.freepik"
       ]
     },
     "tokens": {
@@ -210,7 +212,7 @@
       "hourly": -1,
       "daily": -1,
       "weekly": -1,
-      "monthly": 500
+      "monthly": 400
     }
   }
 }
