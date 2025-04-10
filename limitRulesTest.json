@@ -214,5 +214,41 @@
       "weekly": -1,
       "monthly": 300
     }
+  },
+  "freepikAILimits": {
+    "alias": "freepikAILimits",
+    "host": "freepikAILimits",
+    "method": "tab",
+    "updateOnNewTab": true,
+    "triggers": {
+      "https://www.freepik.com/pikaso/ai-video-generator/*": {
+        "type": "tab",
+        "from": "https://www.freepik.com/pikaso/ai-video-generator/*",
+        "marker": "",
+        "whitelist": []
+      }
+    },
+    "confirm": {
+    },
+    "block": {
+      "requests": [
+        "/pikaso/api/creations?tool[]=video-generator/*",
+        "/pikaso/ai-video-generator/*",
+        "/pikaso/ai-video-generator-t/1/*"
+      ]
+    },
+    "tokens": {
+      "tokensDefaultAmount": 2,
+      "tokensType": "fixed",
+      "tokenPages": [
+      ],
+      "counter": ""
+    },
+    "limits": {
+      "hourly": -1,
+      "daily": 2,
+      "weekly": -1,
+      "monthly": -1
+    }
   }
 }
