@@ -28,7 +28,7 @@
     },
     "limits": {
       "hourly": -1,
-      "daily": 2,
+      "daily": 1,
       "weekly": -1,
       "monthly": -1
     }
@@ -198,9 +198,7 @@
       "requests": [
         "/pikaso/api/",
         "/pikaso/api/(?!limits).*",
-        "/pikaso/api/video/",
-        "^/api\\/(?:[^/]+\\/)*download(?:\\?.*)?$",
-        "/tunes.freepik"
+        "^/api\\/(?:[^/]+\\/)*download(?:\\?.*)?$"
       ]
     },
     "tokens": {
@@ -221,9 +219,21 @@
     "method": "tab",
     "updateOnNewTab": true,
     "triggers": {
-      "https://www.freepik.com/pikaso/ai-video-generator/*": {
+      "freepik.com/pikaso/ai-video-generator/*": {
         "type": "tab",
-        "from": "https://www.freepik.com/pikaso/ai-video-generator/*",
+        "from": "https://www.freepik.com/*",
+        "marker": "",
+        "whitelist": []
+      },
+      "tunes.freepik.com/": {
+        "type": "tab",
+        "from": "https://www.freepik.com/*",
+        "marker": "",
+        "whitelist": []
+      },
+      "freepik.com/designer/": {
+        "type": "tab",
+        "from": "https://www.freepik.com/*",
         "marker": "",
         "whitelist": []
       }
@@ -232,21 +242,25 @@
     },
     "block": {
       "requests": [
-        "/pikaso/api/creations?tool[]=video-generator/*",
-        "/pikaso/ai-video-generator/*",
-        "/pikaso/ai-video-generator-t/1/*"
+        "https://www.freepik.com/pikaso/ai-video-generator/32132/*",
+        "/pikaso/api/video/generate/*",
+        "/pikaso/api/video/generate/",
+        "freepik.com/sound-effects/create",
+        "freepik.com/ai-voice-generator/generator",
+        "freepik.com/sound-effects/video/generate",
+        "^(?:https?:\\/\\/)?(?:www\\.)?freepik\\.com\\/designer\\/edit\\/api\\/(?!vector(?:\\/|$)).+$"
       ]
     },
     "tokens": {
-      "tokensDefaultAmount": 2,
+      "tokensDefaultAmount": 1,
       "tokensType": "fixed",
       "tokenPages": [
       ],
       "counter": ""
     },
     "limits": {
-      "hourly": -1,
-      "daily": 2,
+      "hourly": 1,
+      "daily": -1,
       "weekly": -1,
       "monthly": -1
     }
