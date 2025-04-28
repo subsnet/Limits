@@ -273,5 +273,51 @@
       "weekly": -1,
       "monthly": -1
     }
+  },
+  "recraft": {
+    "alias": "recraft",
+    "host": "app.recraft.ai",
+    "method": "request",
+    "updateOnNewTab": false,
+    "triggers": {
+      "^https://api\\.recraft\\.ai/poll_recraft\\?operation_id=[^ ]+$": {
+        "type": "fetch",
+        "from": "https://www.recraft.ai/project/[a-zA-Z0-9-]+",
+        "marker": "\"credits\":",
+        "whitelist": []
+      },
+      "https://www.recraft.ai/project/[a-zA-Z0-9-]+": {
+        "type": "tab",
+        "from": "https://www.recraft.ai/project/[a-zA-Z0-9-]+",
+        "marker": "",
+        "whitelist": []
+      }
+    },
+    "confirm": {
+    },
+    "block": {
+      "requests": [
+        "https:\\/\\/api\\.recraft\\.ai\\/(?!.*\\/auth$)"
+      ],
+      "elements": {
+        "url": "",
+        "selector": "",
+        "global": false
+      }
+    },
+    "tokens": {
+      "tokensDefaultAmount": 1,
+      "tokensType": "selector",
+      "clear": [
+        ","
+      ],
+      "counter": "[data-testid='credits-count'] span"
+    },
+    "limits": {
+      "hourly": -1,
+      "daily": 4,
+      "weekly": -1,
+      "monthly": -1
+    }
   }
 }
