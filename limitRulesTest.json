@@ -1,323 +1,322 @@
-{
-  "freepik": {
-    "alias": "freepik",
-    "host": "freepik.com",
-    "method": "request",
-    "updateOnNewTab": false,
-    "triggers": {
-      "\\/api\\/regular\\/download\\?resource=\\d+&action=download(?:&.*)?": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "",
-        "whitelist": [
-          "/*freepik.com/user/downloads"
-        ]
-      }
-    },
-    "confirm": {
-    },
-    "block": {
-      "requests": [
-        "\\/api\\/regular\\/download\\?resource=\\d+&action=download(?:&.*)?"
+
+"freepik": {
+  "alias": "freepik",
+  "host": "freepik.com",
+  "method": "request",
+  "updateOnNewTab": false,
+  "triggers": {
+    "\\/api\\/regular\\/download\\?resource=\\d+&action=download(?:&.*)?": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "",
+      "whitelist": [
+        "/*freepik.com/user/downloads"
       ]
-    },
-    "tokens": {
-      "tokensDefaultAmount": 1,
-      "tokensType": "fixed",
-      "counter": ""
-    },
-    "limits": {
-      "hourly": -1,
-      "daily": 3,
-      "weekly": -1,
-      "monthly": -1
     }
   },
-  "freepikAI": {
-    "alias": "freepikAI",
-    "host": "freepik.com",
-    "method": "request",
-    "updateOnNewTab": false,
-    "triggers": {
-      "/api/ai/remove-background$": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "",
-        "channel": 1,
-        "tokensUsed": 3,
-        "whitelist": []
-      },
-      "/pikaso/api/remove-background": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/pikaso/expand",
-        "marker": "",
-        "channel": 1,
-        "tokensUsed": 3,
-        "whitelist": []
-      },
-      "/pikaso/api/validate-prompt\\?prompt=": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/pikaso/sketch",
-        "marker": "",
-        "channel": 1,
-        "tokensUsed": 1,
-        "whitelist": []
-      },
-      "/pikaso/api/start-retouch": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "",
-        "channel": 1,
-        "tokensUsed": 20,
-        "whitelist": []
-      },
-      "/pikaso/api/start-retouch/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "\"tool\":\"expand\"",
-        "channel": 1,
-        "tokensUsed": 20,
-        "whitelist": []
-      },
-      "/pikaso/api/create-enhance": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "\"resolution\":\"4k\"",
-        "channel": 1,
-        "tokensUsed": 216,
-        "whitelist": []
-      },
-      "/pikaso/api/create-enhance/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "\"resolution\":\"2k\"",
-        "channel": 1,
-        "tokensUsed": 216,
-        "whitelist": []
-      },
-      "/pikaso/api/create-enhance/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "",
-        "channel": 1,
-        "tokensUsed": 3,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Classic Fast",
-        "channel": 1,
-        "tokensUsed": 1,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Flux Fast",
-        "channel": 1,
-        "tokensUsed": 5,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Classic\\",
-        "channel": 1,
-        "tokensUsed": 5,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Mystic\\",
-        "channel": 1,
-        "tokensUsed": 50,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Mystic 2.5 Flexible",
-        "channel": 1,
-        "tokensUsed": 45,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Mystic 2.5",
-        "channel": 1,
-        "tokensUsed": 45,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*/*/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Flux Realism",
-        "channel": 1,
-        "tokensUsed": 40,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Flux 1.1 Pro",
-        "channel": 1,
-        "tokensUsed": 120,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*/*/*/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Flux 1.0 Fast",
-        "channel": 1,
-        "tokensUsed": 5,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*/*/*/*/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Flux 1.0",
-        "channel": 1,
-        "tokensUsed": 40,
-        "whitelist": []
-      },
-      "/pikaso/api/render/v2/*/*/*/*/*/*/*/*/*/*": {
-        "type": "fetch",
-        "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
-        "marker": "Flux 1.0 Realism",
-        "channel": 1,
-        "tokensUsed": 40,
-        "whitelist": []
-      }
+  "confirm": {
+  },
+  "block": {
+    "requests": [
+      "\\/api\\/regular\\/download\\?resource=\\d+&action=download(?:&.*)?"
+    ]
+  },
+  "tokens": {
+    "tokensDefaultAmount": 1,
+    "tokensType": "fixed",
+    "counter": ""
+  },
+  "limits": {
+    "hourly": -1,
+    "daily": 3,
+    "weekly": -1,
+    "monthly": -1
+  }
+},
+"freepikAI": {
+  "alias": "freepikAI",
+  "host": "freepik.com",
+  "method": "request",
+  "updateOnNewTab": false,
+  "triggers": {
+    "/api/ai/remove-background$": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "",
+      "channel": 1,
+      "tokensUsed": 3,
+      "whitelist": []
     },
-    "confirm": {
+    "/pikaso/api/remove-background": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/pikaso/expand",
+      "marker": "",
+      "channel": 1,
+      "tokensUsed": 3,
+      "whitelist": []
     },
-    "block": {
-      "requests": [
-        "/pikaso/api/",
-        "/pikaso/api/(?!limits).*",
-        "^/api\\/(?:[^/]+\\/)*download(?:\\?.*)?$"
-      ]
+    "/pikaso/api/validate-prompt\\?prompt=": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/pikaso/sketch",
+      "marker": "",
+      "channel": 1,
+      "tokensUsed": 1,
+      "whitelist": []
     },
-    "tokens": {
-      "tokensDefaultAmount": 7,
-      "tokensType": "each",
-      "counter": ""
+    "/pikaso/api/start-retouch": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "",
+      "channel": 1,
+      "tokensUsed": 20,
+      "whitelist": []
     },
-    "limits": {
-      "hourly": -1,
-      "daily": -1,
-      "weekly": -1,
-      "monthly": 200
+    "/pikaso/api/start-retouch/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "\"tool\":\"expand\"",
+      "channel": 1,
+      "tokensUsed": 20,
+      "whitelist": []
+    },
+    "/pikaso/api/create-enhance": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "\"resolution\":\"4k\"",
+      "channel": 1,
+      "tokensUsed": 216,
+      "whitelist": []
+    },
+    "/pikaso/api/create-enhance/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "\"resolution\":\"2k\"",
+      "channel": 1,
+      "tokensUsed": 216,
+      "whitelist": []
+    },
+    "/pikaso/api/create-enhance/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "",
+      "channel": 1,
+      "tokensUsed": 3,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Classic Fast",
+      "channel": 1,
+      "tokensUsed": 1,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Flux Fast",
+      "channel": 1,
+      "tokensUsed": 5,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Classic\\",
+      "channel": 1,
+      "tokensUsed": 5,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Mystic\\",
+      "channel": 1,
+      "tokensUsed": 50,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Mystic 2.5 Flexible",
+      "channel": 1,
+      "tokensUsed": 45,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Mystic 2.5",
+      "channel": 1,
+      "tokensUsed": 45,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*/*/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Flux Realism",
+      "channel": 1,
+      "tokensUsed": 40,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Flux 1.1 Pro",
+      "channel": 1,
+      "tokensUsed": 120,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*/*/*/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Flux 1.0 Fast",
+      "channel": 1,
+      "tokensUsed": 5,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*/*/*/*/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Flux 1.0",
+      "channel": 1,
+      "tokensUsed": 40,
+      "whitelist": []
+    },
+    "/pikaso/api/render/v2/*/*/*/*/*/*/*/*/*/*": {
+      "type": "fetch",
+      "from": "^https:\\/\\/[^/]*freepik\\.com\\/",
+      "marker": "Flux 1.0 Realism",
+      "channel": 1,
+      "tokensUsed": 40,
+      "whitelist": []
     }
   },
-  "freepikAILimits": {
-    "alias": "freepikAILimits",
-    "host": "freepikAILimits",
-    "method": "tab",
-    "updateOnNewTab": true,
-    "triggers": {
-      "freepik.com/pikaso/ai-video-generator/*": {
-        "type": "tab",
-        "from": "https://www.freepik.com/*",
-        "marker": "",
-        "whitelist": []
-      },
-      "tunes.freepik.com/": {
-        "type": "tab",
-        "from": "https://www.freepik.com/*",
-        "marker": "",
-        "whitelist": []
-      },
-      "freepik.com/ai/icon-generator/": {
-        "type": "tab",
-        "from": "https://www.freepik.com/*",
-        "marker": "",
-        "whitelist": []
-      },
-      "freepik.com/designer/": {
-        "type": "tab",
-        "from": "https://www.freepik.com/*",
-        "marker": "",
-        "whitelist": []
-      }
+  "confirm": {
+  },
+  "block": {
+    "requests": [
+      "/pikaso/api/",
+      "/pikaso/api/(?!limits).*",
+      "^/api\\/(?:[^/]+\\/)*download(?:\\?.*)?$"
+    ]
+  },
+  "tokens": {
+    "tokensDefaultAmount": 7,
+    "tokensType": "each",
+    "counter": ""
+  },
+  "limits": {
+    "hourly": -1,
+    "daily": -1,
+    "weekly": -1,
+    "monthly": 200
+  }
+},
+"freepikAILimits": {
+  "alias": "freepikAILimits",
+  "host": "freepikAILimits",
+  "method": "tab",
+  "updateOnNewTab": true,
+  "triggers": {
+    "freepik.com/pikaso/ai-video-generator/*": {
+      "type": "tab",
+      "from": "https://www.freepik.com/*",
+      "marker": "",
+      "whitelist": []
     },
-    "confirm": {
+    "tunes.freepik.com/": {
+      "type": "tab",
+      "from": "https://www.freepik.com/*",
+      "marker": "",
+      "whitelist": []
     },
-    "block": {
-      "requests": [
-        "https://www.freepik.com/pikaso/ai-video-generator/32132/*",
-        "/pikaso/api/video/generate/*",
-        "/pikaso/api/video/generate/",
-        "freepik.com/sound-effects/create",
-        "freepik.com/ai-voice-generator/generator",
-        "freepik.com/sound-effects/video/generate",
-        "freepik.com/audio/sound-effects/*",
-        "freepik.com/ai/icon-generator/*",
-        "freepik.com/api/icons/ai/generate/*",
-        "^(?:https?:\\/\\/)?(?:www\\.)?freepik\\.com\\/designer\\/edit\\/api\\/(?!vector(?:\\/|$)).+$"
-      ]
+    "freepik.com/ai/icon-generator/": {
+      "type": "tab",
+      "from": "https://www.freepik.com/*",
+      "marker": "",
+      "whitelist": []
     },
-    "tokens": {
-      "tokensDefaultAmount": 1,
-      "tokensType": "fixed",
-      "tokenPages": [
-      ],
-      "counter": ""
-    },
-    "limits": {
-      "hourly": 1,
-      "daily": -1,
-      "weekly": -1,
-      "monthly": -1
+    "freepik.com/designer/": {
+      "type": "tab",
+      "from": "https://www.freepik.com/*",
+      "marker": "",
+      "whitelist": []
     }
   },
-  "recraft": {
-    "alias": "recraft",
-    "host": "app.recraft.ai",
-    "method": "request",
-    "updateOnNewTab": false,
-    "triggers": {
-      "^https://api\\.recraft\\.ai/poll_recraft\\?operation_id=[^ ]+$": {
-        "type": "fetch",
-        "from": "https://www.recraft.ai/project/[a-zA-Z0-9-]+",
-        "marker": "\"credits\":",
-        "whitelist": []
-      },
-      "https://www.recraft.ai/project/[a-zA-Z0-9-]+": {
-        "type": "tab",
-        "from": "https://www.recraft.ai/project/[a-zA-Z0-9-]+",
-        "marker": "",
-        "whitelist": []
-      }
+  "confirm": {
+  },
+  "block": {
+    "requests": [
+      "https://www.freepik.com/pikaso/ai-video-generator/32132/*",
+      "/pikaso/api/video/generate/*",
+      "/pikaso/api/video/generate/",
+      "freepik.com/sound-effects/create",
+      "freepik.com/ai-voice-generator/generator",
+      "freepik.com/sound-effects/video/generate",
+      "freepik.com/audio/sound-effects/*",
+      "freepik.com/ai/icon-generator/*",
+      "freepik.com/api/icons/ai/generate/*",
+      "^(?:https?:\\/\\/)?(?:www\\.)?freepik\\.com\\/designer\\/edit\\/api\\/(?!vector(?:\\/|$)).+$"
+    ]
+  },
+  "tokens": {
+    "tokensDefaultAmount": 1,
+    "tokensType": "fixed",
+    "tokenPages": [
+    ],
+    "counter": ""
+  },
+  "limits": {
+    "hourly": 1,
+    "daily": -1,
+    "weekly": -1,
+    "monthly": -1
+  }
+},
+"recraft": {
+  "alias": "recraft",
+  "host": "app.recraft.ai",
+  "method": "request",
+  "updateOnNewTab": false,
+  "triggers": {
+    "^https://api\\.recraft\\.ai/poll_recraft\\?operation_id=[^ ]+$": {
+      "type": "fetch",
+      "from": "https://www.recraft.ai/project/[a-zA-Z0-9-]+",
+      "marker": "\"credits\":",
+      "whitelist": []
     },
-    "confirm": {
-    },
-    "block": {
-      "requests": [
-        "https:\\/\\/api\\.recraft\\.ai\\/(?!.*\\/auth$)"
-      ],
-      "elements": {
-        "url": "",
-        "selector": "",
-        "global": false
-      }
-    },
-    "tokens": {
-      "tokensDefaultAmount": 1,
-      "tokensType": "selector",
-      "clear": [
-        ","
-      ],
-      "counter": "[data-testid='credits-count'] span"
-    },
-    "limits": {
-      "hourly": -1,
-      "daily": 4,
-      "weekly": -1,
-      "monthly": -1
+    "https://www.recraft.ai/project/[a-zA-Z0-9-]+": {
+      "type": "tab",
+      "from": "https://www.recraft.ai/project/[a-zA-Z0-9-]+",
+      "marker": "",
+      "whitelist": []
     }
+  },
+  "confirm": {
+  },
+  "block": {
+    "requests": [
+      "https:\\/\\/api\\.recraft\\.ai\\/(?!.*\\/auth$)"
+    ],
+    "elements": {
+      "url": "",
+      "selector": "",
+      "global": false
+    }
+  },
+  "tokens": {
+    "tokensDefaultAmount": 1,
+    "tokensType": "selector",
+    "clear": [
+      ","
+    ],
+    "counter": "[data-testid='credits-count'] span"
+  },
+  "limits": {
+    "hourly": -1,
+    "daily": 4,
+    "weekly": -1,
+    "monthly": -1
   }
 }
